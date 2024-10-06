@@ -1,5 +1,5 @@
 package homework15;
-.idea/
+
 
 import static java.lang.System.*;
 
