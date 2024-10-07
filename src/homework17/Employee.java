@@ -16,6 +16,7 @@ public class Employee {
    private double salary;
 
 
+
     // Конструктор для инициализации полей
     public Employee(String name, int age, double salary){
 
@@ -23,7 +24,6 @@ public class Employee {
         this.age = age;
         this.salary = salary;
     }
-
 
 
     public String toString() {
