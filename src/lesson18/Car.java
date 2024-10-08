@@ -23,4 +23,11 @@ public class Car {
         System.out.println("Hello from static method");
 
     }
+
+    public int getPowerPS() {
+        return powerPS;
+    }
+    public void setPowerPS(int powerPS){
+        this.powerPS = powerPS;
+    }
 }

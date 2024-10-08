@@ -1,11 +1,17 @@
-package homework18;
+package homework19;
 
-public class CalculatorApp {
+import homework18.Calculator;
+
+public class CalcApp {
     public static void main(String[] args) {
 
 
         double a = 14.5;
         double b = 2.0;
+       double PI = 3.141591;
+       double r =
+
+
 
         // Вызов методов класса
         System.out.println("Addition: " + Calculator.add(a, b));
@@ -14,3 +20,4 @@ public class CalculatorApp {
         System.out.println("Division: " + Calculator.divide(a, b));
     }
 }
+

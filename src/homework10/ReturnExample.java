@@ -1,5 +1,5 @@
 
-package homework_10;
+package homework10;
 
 public class ReturnExample {
 
