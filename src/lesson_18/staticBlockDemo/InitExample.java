@@ -1,6 +1,4 @@
-package lesson18.staticBlockDemo;
-
-import lesson01.Hello;
+package lesson_18.staticBlockDemo;
 
 public class InitExample {
     static String[] colors;

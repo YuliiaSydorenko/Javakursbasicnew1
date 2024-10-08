@@ -1,4 +1,4 @@
-package lesson18;
+package lesson_18;
 
 public class CarApp {
     public static void main(String[] args) {

@@ -1,11 +1,13 @@
 package lesson_19;
 
-import lesson18.Car;
-import lesson_19.FinalDemo;
+import lesson_18.Car;
+
+/**
+ * @author Sergey Bugaenko
+ * {@code @date} 08.10.2024
+ */
 
 public class MainApp {
-
-
     public static void main(String[] args) {
 
         FinalDemo finalDemo = new FinalDemo(50);
@@ -31,5 +33,7 @@ public class MainApp {
 
         System.out.println("\n ================ \n");
         System.out.println("finalDemo.getPiX(): " + finalDemo.getPiX());
+
+
     }
 }
