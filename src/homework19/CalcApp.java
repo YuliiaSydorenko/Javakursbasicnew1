@@ -13,6 +13,10 @@ public class CalcApp {
 
 
 
+        double r = 5.0;
+
+
+
 
 
 
