@@ -10,8 +10,8 @@ public class CalcApp {
 
         double a = 14.5;
         double b = 2.0;
-        //double pi = PI;
-        double r = 5.0;
+
+
 
 
 

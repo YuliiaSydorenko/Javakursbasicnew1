@@ -1,6 +1,6 @@
-package lesson_19;
+package lesson19;
 
-import lesson_18.Car;
+import lesson18.Car;
 
 /**
  * @author Sergey Bugaenko

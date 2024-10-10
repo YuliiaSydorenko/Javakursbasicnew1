@@ -1,4 +1,4 @@
-package lesson_18.staticBlockDemo;
+package lesson18.staticBlockDemo;
 
 public class InitExample {
     static String[] colors;
