@@ -1,5 +1,8 @@
 package homework22.human;
 
+// профи бежит со скоростью 25 км,
+//отдых после пробежки 5 минут.
+
 public class Professional extends Man {
     @Override
     public void run(){
@@ -7,12 +10,10 @@ public class Professional extends Man {
         rest();
     }
 
-    // Переопределяем метод отдыха
     @Override
     public void rest() {
         System.out.println("Rest needed: 5 minutes");
     }
-
-    }
+}
 
 
