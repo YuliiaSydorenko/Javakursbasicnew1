@@ -1,6 +1,10 @@
 package homework22.transport;
 
+//Создайте массив транспортных средств разных типов. Используйте полиморфизм для вызова метода startEngine() для каждого транспортного средства.
+
 public class TransportApp {
+
+
     public static void main(String[] args) {
 
         Vehicle[] vehicles = new Vehicle[3];
