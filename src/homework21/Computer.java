@@ -18,4 +18,28 @@ public class Computer extends Component {
         memory.printInfo();
         storage.printInfo();
     }
+
+    public Storage getStorage() {
+        return storage;
+    }
+
+    public Processor getProcessor() {
+        return processor;
+    }
+
+    public void setProcessor(Processor processor) {
+        this.processor = processor;
+    }
+
+    public Memory getMemory() {
+        return memory;
+    }
+
+    public void setMemory(Memory memory) {
+        this.memory = memory;
+    }
+
+    public void setStorage(Storage storage) {
+        this.storage = storage;
+    }
 }

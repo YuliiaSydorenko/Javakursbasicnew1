@@ -16,4 +16,12 @@ public class Component {
     public void printInfo(){
         System.out.println("Brand: " + brand);
     }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public String getModel() {
+        return model;
+    }
 }
