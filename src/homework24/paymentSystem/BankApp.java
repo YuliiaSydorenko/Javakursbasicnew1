@@ -6,6 +6,8 @@ public class BankApp {
         PaymentSystem eWallet = new ElectronicWallet(500);  // Электронный кошелек с 50 долларов
 
 
+
+
         bankAccount.depositTransfer(200);    // Пополнение счета на 200 евро
         bankAccount.withdrawMoney(150);      // Снятие 10 евро
         System.out.println("Bank Account Balance: " + bankAccount.checkBalance() + " EUR");
