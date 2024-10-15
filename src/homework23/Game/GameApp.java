@@ -14,15 +14,6 @@ public class GameApp {
     }
 
     }
-/*
-        GameCharacter[] characters = new GameCharacter[3];
 
-        characters[0] = new Warrior("Glen");
-        characters[1] = new Mage("Merlin");
-        characters[2] = new Archer("Beleg");
-
-        for (GameCharacter character : characters){
-
- */
 
 
