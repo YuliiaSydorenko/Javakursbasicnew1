@@ -1,16 +1,16 @@
 package Homework25;
 
-
     public class MagicApp {
         public static void main(String[] args) {
 
             int[] test = {0, 1, 2, 3, 4, 5, 6, 7};
 
-            homework16.MagicArray2 magicArray = new homework16.MagicArray2();
+            Homework25.MagicArrayGen magicArray = new Homework25.MagicArrayGen();
 
-//        magicArray.cursor = 1_000_000;
-//        magicArray.array = new int[100000];
-//        magicArray.array = new int[]{1,2,3,4};
+
+
+
+
 
 
             magicArray.add(1, 2, 3, 4, 5, 6, 7, 8, 9);
@@ -36,6 +36,9 @@ package Homework25;
 
 
         }
+
+        private static class MagicArrayGen {
+        }
     }
 
-}
+

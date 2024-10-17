@@ -1,24 +1,28 @@
 package Homework25;
 
-public class MagicArray2 {
-    int[] array;
+public class MagicArrayGen<T> {
+    private T[] array;
     int cursor; // присвоено значение по умолчанию = 0;
 
-    public MagicArray2() {
-        array = new int[10];
+    @SuppressWarnings("unchecked")
+    public MagicArrayGen() {
+        array = (T[]) new Object[10];
     }
 
-    public MagicArray2(int[] array) {
+    public MagicArrayGen(int[] array) {
         if (array == null || array.length == 0) {
-            this.array = new int[10];
+            this.array = (T[]) new Object[10];
         } else {
-            this.array = new int[array.length * 2];
+            this.array = (T[]) new Object[array.length * 2];
             add(array);
         }
     }
 
+    private void add(int[] array) {
+    }
+
     // Добавление в массив одного элемента
-    void add(int value) {
+    public void add(T value) {
 
 
         // Проверка. Есть ли вообще свободное место во внутреннем массиве
@@ -32,7 +36,7 @@ public class MagicArray2 {
         cursor++;
     }
 
-    void add(int... numbers) {
+    void add(T... numbers) {
         // с numbers я могу обращаться точно также, как со ссылкой на массив int
         // System.out.println("Приняли несколько интов. А именно: " + numbers.length);
         // System.out.println("Есть индекс у каждого инта, как в массиве. По индексом 0: " + numbers[0]);
@@ -52,7 +56,7 @@ public class MagicArray2 {
          */
 
         // 1
-        int[] newArray = new int[array.length * 2];
+        T[] newArray = (T[]) new Object[array.length * 2];
 
         // 2
         for (int i = 0; i < cursor; i++) {
@@ -84,7 +88,7 @@ public class MagicArray2 {
     }
 
     // Возвращает значение по индексу
-    int get(int index) {
+    Object get(int index) {
         if (index >= 0 && index < cursor) {
             return array[index];
         }
@@ -94,7 +98,7 @@ public class MagicArray2 {
     }
 
     // Удаление элемента по индексу
-    int remove(int index) {
+    public Object remove(int index) {
         /*
         1. Проверка индекса на валидность
         2. Удалить значение по индексу
@@ -104,7 +108,7 @@ public class MagicArray2 {
 
         if (index >= 0 && index < cursor) {
             // Логика удаления
-            int value = array[index]; // значение, которое я должен вернуть
+            T value = array[index]; // значение, которое я должен вернуть
 
             // Перебираем элементы начиная с индекса и перезаписываем значениями из соседней правой ячейки
             for (int i = index; i < cursor - 1; i++) { // граница перебора индексов?
@@ -123,14 +127,14 @@ public class MagicArray2 {
 
     // Поиск по значению. Первое вхождение
     // {1, 100, 5, 5, 100} -> 100 метод вернет индекс первого найдено вхождения = 1
-    int indexOf(int value) {
+    /*int indexOf(int value) {
         for (int i = 0; i < cursor; i++) {
-            if (array[i] == value) {
+            if ( (int array[i] == value) {
                 return i;
             }
         }
         return -1;
-    }
+    }*/
 
     // Метод поиска по значению. Поиск последнего вхождения
     // {1, 100, 5, 5, 100} -> 100 метод вернет индекс последнего найдено вхождения = 4
@@ -154,6 +158,10 @@ public class MagicArray2 {
     }
 
 
+    public int indexOf(int i) {
+
+        return i;
+    }
 }
 
 /*
