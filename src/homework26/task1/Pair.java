@@ -1,4 +1,4 @@
-package homework26;
+package homework26.task1;
 
 public class Pair <T>{
 

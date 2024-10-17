@@ -1,4 +1,4 @@
-package homework26;
+package homework26.task1;
 
 public class PairApp {
     public static void main(String[] args) {
