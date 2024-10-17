@@ -1,4 +1,4 @@
-package Homework25;
+package homework25;
 
 public class MagicArrayGen<T> {
     private T[] array;

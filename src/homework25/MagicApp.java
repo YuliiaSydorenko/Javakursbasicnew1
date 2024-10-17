@@ -1,11 +1,11 @@
-package Homework25;
+package homework25;
 
     public class MagicApp {
         public static void main(String[] args) {
 
             int[] test = {0, 1, 2, 3, 4, 5, 6, 7};
 
-            Homework25.MagicArrayGen magicArray = new Homework25.MagicArrayGen();
+            homework25.MagicArrayGen magicArray = new homework25.MagicArrayGen();
 
 
 
