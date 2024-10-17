@@ -1,4 +1,4 @@
-package homework24.paymentSystem;
+package homework24.system1;
 //Создайте интерфейс PaymentSystem с методами:
 //withdrawMoney(double amount) (снятие со счета)- списываются деньги со счета
 //depositTransfer(double amount) (поступление денег на счет);
@@ -10,12 +10,9 @@ package homework24.paymentSystem;
 
 
 
-public interface PaymentSystem {
+public interface PaySystem {
 
-    void withdrawMoney (double amount);
-
-    void depositTransfer(double amount);
-    double checkBalance();
-
-
+    void withdrawMoney(double amount); // (снятие со счета) - списываются деньги со счета
+    void depositTransfer(double amount); // (поступление денег на счет);
+    double checkBalance(); // (остаток на счете).
 }

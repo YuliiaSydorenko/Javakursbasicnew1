@@ -1,5 +1,4 @@
-package homework16;
-
+package Homework25;
 
 public class MagicArray2 {
     int[] array;
