@@ -1,6 +1,6 @@
 package lesson26;
-
 import lists.MyArrayList;
+
 
 
 public class ArrayTesting {
@@ -11,22 +11,23 @@ public class ArrayTesting {
         MyArrayList<Double> doubles = new MyArrayList<>();
 
 
-        numbers.add(1, 2, 3, 4, 5, 6);
+        numbers.add("Python");
 
         System.out.println(numbers);
 
         System.out.println(numbers.indexOf(4));
 
-        System.out.println(numbers.removeByValue(5));
+        System.out.println(numbers.remove(5));
         System.out.println(numbers);
 
         MyArrayList<String> strings = new MyArrayList<>();
         strings.add("Java");
-        strings.add("Python", "JS", "Scala", "Kotlin");
+        strings.add("Python");
         System.out.println(strings);
 
-        System.out.println(strings.removeByValue("Basic"));
-        System.out.println(strings.removeByValue("Scala"));
+        System.out.println(strings.remove("Basic"));
+        System.out.println(strings.remove("Scala"));
         System.out.println(strings);
     }
+
 }

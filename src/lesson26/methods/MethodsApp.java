@@ -6,7 +6,6 @@ import lists.MyArrayList;
 public class MethodsApp {
     public static void main(String[] args) {
 
-
         Integer[] integers = {1, 2, 3, 4, 5, 6};
         String[] strings = {"Hello", "World", "Java"};
         Double[] doubles = {1.1, 2.2, 3.3, 4.4, 5.5};
@@ -28,17 +27,16 @@ public class MethodsApp {
         System.out.println(Util.sum2(doubles));
 
         MyArrayList<Integer> myArrayList = new MyArrayList<>();
-        myArrayList.add(1, 2, 3, 4, 5, 6, 7);
+        myArrayList.add(1, 3, 2, 4, 5, 6, 7);
 
         double listSum = Util.listSum(myArrayList);
         System.out.println("listSum = " + listSum);
 
         MyArrayList<String> strings1 = new MyArrayList<>();
-        strings1.add("Hello", "World", "Java");
+        strings1.add("Hello");
 
         // Ошибка компиляции
         // double listSu2 = Util.listSum(strings1);
-
 
     }
 }

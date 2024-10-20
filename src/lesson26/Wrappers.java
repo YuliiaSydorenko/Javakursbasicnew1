@@ -22,6 +22,13 @@ public class Wrappers {  /*
 
         int primitiveInt = wrapperInt; // Автораспаковка. Из типа Integer автоматически преобразовало в примитив int
 
+        Boolean boolWrapper = true; // автоупаковка
+        System.out.println("boolWrapper: " + boolWrapper);
+        boolWrapper = null; // У ссылочного Boolean появляется третье значение - null
+
+
+        System.out.println("\n======================= \n");
+
         // Сравнение объектов
         // Кеширование объектов -128...127
 
@@ -56,6 +63,7 @@ public class Wrappers {  /*
         Integer f = Integer.valueOf(127);
         System.out.println("e == f -> " + (e == f));
 
+        // Возвращает ссылочные типы данных (Integer, Double, Long)
         Integer intStr = Integer.valueOf("123"); // передаем строку
 
         System.out.println(intStr + 100); // 223
@@ -63,7 +71,7 @@ public class Wrappers {  /*
         Double doubleWrap = Double.valueOf(154.5);
         System.out.println(doubleWrap);
 
-        // 2. parseXXX() - преобразует строку в соответсвующий примитив
+        // 2. parseXXX() - преобразует строку в соответсвующий примитив (int, double, long)
         // "456"
         System.out.println(Integer.parseInt("456") + 100);
         double d1 = Double.parseDouble("345.67") + 200;
@@ -72,9 +80,72 @@ public class Wrappers {  /*
         // 3. toString - возвращает строковое представление числа
         System.out.println(doubleWrap);
 
+        // 4. equals(Object obj) - сравнение объектов на равенство по значению
+        Long l1 = Long.valueOf(200);
+        // Вариант 2
+        l1 = 200L;
+        System.out.println("l1.equals(200): " + l1.equals(200));
+        // Мы хотим сравнить объект типа Long с примитивом int
+        // Метод equals принимает объект типа Object. Поэтому примитив должен быть приведен к ссылочному типу
+        // для примитива int его обертка (ссылочный тип) это Integer -> int автоупаковывается (приводится) к типу Integer
+        // Логика сравнения метода equals
 
 
 
+        System.out.println("l1.equals(200): " + l1.equals(200L));
+        Integer i1 = 150;
+        System.out.println("i1.equals(150): " + i1.equals(150));
+
+        // 5. compareTo() - сравнивает текущий объект с другим объектом того же типа (кто больше?)
+        // 1 - если наш объект больше чем тот объект, с которым сравниваем
+        // -1 - если наш объект меньше
+        // 0 - если объекты равны по значению
+
+        Integer iMax = 250;
+        Integer iMin = 125;
+        Integer iSuper = 500;
+        System.out.println(iMax +  ".compareTo(" + iMin + ") -> " + iMax.compareTo(iMin)); // 1
+        System.out.println(iMax + " .compareTo( " + iSuper + ") -> " + iMax.compareTo(iSuper)); // -1
+        System.out.println(iMax +  ".compareTo(" + 250 + ") -> " + iMax.compareTo(250)); // 0
+
+        // xxxValue() - возвращает значение объекта в виде примитивного типа
+        // doubleValue
+
+        Double d2 = Double.valueOf(125.56); // Явная / принудительная упаковка. Примитив -> Обертку
+        double dPrimitive = d2.doubleValue(); // Явная / принудительная распаковка. Обертка -> примитив
+
+        System.out.println("\n ========================= \n");
+
+        /*
+        Все числовые обертки наследуются от абстрактного класса Number.
+
+        Byte
+        Short
+        Integer
+        Long
+        Float
+        Double
+         */
+
+        /*
+        Методы возвращают соответсвующий примитив
+        byteValue()
+        shortValue()
+        intValue()
+        longValue()
+        floatValue()
+        doubleValue()
+         */
+
+        Integer integer = 31844;
+        Double doubleVal = 235.76;
+
+        System.out.println(integer.doubleValue());
+
+        short shortPrimitive = integer.shortValue();
+
+        int intPrimitive = doubleVal.intValue();
+        System.out.println("intPrimitive: " + intPrimitive);
 
 
 

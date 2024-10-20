@@ -1,15 +1,15 @@
 package lists;
 
+import java.lang.reflect.Array;
 
-public class MyArrayList <T> {
+
+public class MyArrayList<T> implements MyList<T> {
     private T[] array;
     private int cursor; // присвоено значение по умолчанию = 0;
 
     @SuppressWarnings("unchecked") // Подавляю предупреждение компилятора о непроверяемом приведении типа
     public MyArrayList() {
         array = (T[]) new Object[10];
-
-
     }
 
     @SuppressWarnings("unchecked")
@@ -18,12 +18,12 @@ public class MyArrayList <T> {
             this.array = (T[]) new Object[10];
         } else {
             this.array = (T[]) new Object[array.length * 2];
-            add(array);
+            addAll(array);
         }
     }
 
     // Добавление в массив одного элемента
-    public void add(T value) {
+    public void add(String python) {
 
 
         // Проверка. Есть ли вообще свободное место во внутреннем массиве
@@ -33,17 +33,18 @@ public class MyArrayList <T> {
             expandArray();
         }
 
+        T value;
         array[cursor] = value;
         cursor++;
     }
 
-
-    public void add(T... numbers) {
+    @Override
+    public void addAll(T... numbers) {
         // с numbers я могу обращаться точно также, как со ссылкой на массив int
         // System.out.println("Приняли несколько интов. А именно: " + numbers.length);
         // System.out.println("Есть индекс у каждого инта, как в массиве. По индексом 0: " + numbers[0]);
         for (int i = 0; i < numbers.length; i++) {
-            add(numbers[i]);
+            add("Python");
         }
     }
 
@@ -84,12 +85,14 @@ public class MyArrayList <T> {
         return result;
     }
 
+
     // Текущее количество элементов в массиве
     public int size() {
         return cursor;
     }
 
     // Возвращает значение по индексу
+    @Override
     public T get(int index) {
         if (index >= 0 && index < cursor) {
             return array[index];
@@ -126,6 +129,60 @@ public class MyArrayList <T> {
         }
     }
 
+    // Удаление элемента по значению
+    @Override
+    public boolean remove(T value) {
+        /*
+        1. Есть ли элемент с таким значение в массиве - indexOf
+        2. Если элемента нет - вернуть false
+        3. Если элемент есть - удалить и вернуть true - вызвать удаление по индексу
+         */
+        int index = indexOf(value);
+        if (index == -1) return false;
+
+        remove(index);
+        return true;
+    }
+
+    @Override
+    public boolean contains(T value) {
+        // 3 >= 0 -> true (элемент найден) | -1 >= 0 -> false (не содержится)
+        return indexOf(value) >= 0;
+
+//        int index = indexOf(value);
+//        if (index >= 0) {
+//            // Индекс, который вернулся больше нуля - элемент найден
+//            return true;
+//        }
+//        else {
+//            // index меньше нуля (минус 1), значит такое значение не найдено = не содержится в нашем массиве
+//            return false;
+//        }
+    }
+
+    // Перезаписывает значение по указанному индексу
+    @Override
+    public void set(int index, T value) {
+        if (index >= 0 && index < cursor) {
+            // Если индекс "правильный" присваиваем новое значение
+            array[index] = value;
+        }
+        // Если нет, ничего не делаем
+
+    }
+
+    @Override
+    public void add(T i, T i1, T i2, T i3, T i4, T i5, T i6) {
+
+    }
+
+    // Является ли коллекция пустой
+    @Override
+    public boolean isEmpty() {
+        // Если курсор равен 0 - значит у нас нет элементов во внутреннем массиве
+        return cursor == 0;
+    }
+
     // Поиск по значению. Первое вхождение
     // {1, 100, 5, 5, 100} -> 100 метод вернет индекс первого найдено вхождения = 1
     public int indexOf(T value) {
@@ -144,29 +201,51 @@ public class MyArrayList <T> {
 
         for (int i = cursor - 1; i >= 0; i--) {
             if (array[i].equals(value)) {
-               return i;
+                return i;
             }
         }
 
         return -1;
     }
 
-    // Удаление элемента по значению
-    public boolean removeByValue(T value) {
+    // Вернуть наш магический массив в виде обычного массива
+    @SuppressWarnings("unchecked")
+    @Override
+    public T[] toArray() {
         /*
-        1. Есть ли элемент с таким значение в массиве - indexOf
-        2. Если элемента нет - вернуть false
-        3. Если элемент есть - удалить и вернуть true - вызвать удаление по индексу
+        1. Создать новый массив размерностью cursor
+        2. Пройтись по нашему Внутреннему массиву и скопировать все элементы в новый массив
+        3. Вернуть ссылку на новый массив
          */
-        int index = indexOf(value);
-        if (index == -1) return false;
 
-        remove(index);
-        return true;
+
+        // Взять какой-то объект из моего массива и узнать на стадии выполнение программы тип этого объекта.
+        // И потом могу создать массив этого типа данных
+
+        if (cursor == 0) return null;
+        // if (cursor == 0) return (T[]) new Object[0]; // ошибка в RunTime
+
+        Class<T> clazz = (Class<T>) array[0].getClass();
+//        System.out.println("clazz = " + clazz);
+
+        // Создаю массив того же типа, как и 0-й элемент
+        T[] result = (T[]) Array.newInstance(clazz, cursor);
+
+        for (int i = 0; i < result.length; i++) {
+            result[i] = array[i];
+        }
+
+        return result;
+
+
+//          Этот код вызывает ошибку
+//        T[] result = (T[]) new Object[cursor];
+//        for (int i = 0; i < result.length; i++) {
+//            result[i] = array[i];
+//        }
+
+
     }
-
-
-
 }
 
 /*
