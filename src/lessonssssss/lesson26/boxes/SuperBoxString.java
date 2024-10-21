@@ -1,4 +1,4 @@
-package lesson26.boxes;
+package lessonssssss.lesson26.boxes;
 
 
 public class SuperBoxString {

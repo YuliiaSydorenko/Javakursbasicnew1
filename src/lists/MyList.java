@@ -6,9 +6,11 @@ public interface MyList <T> {
     /**
      * Добавить элемент
      *
-     * @param python
+     * @param value
+     * @param js
+     * @param scala
      */
-    void add(String python);
+    void add(T value, String js, String scala);
 
 
     /**
@@ -97,7 +99,5 @@ public interface MyList <T> {
      */
     void set (int index, T value);
 
-
-    void add(T i, T i1, T i2, T i3, T i4, T i5, T i6);
 
 }

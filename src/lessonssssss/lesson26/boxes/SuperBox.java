@@ -1,20 +1,18 @@
-package lesson26.boxes;
+package lessonssssss.lesson26.boxes;
 
 
-public class SuperBoxGen <T>{
-    private T value;
+public class SuperBox {
+    private int value;
 
-
-
-    public SuperBoxGen(T value) {
+    public SuperBox(int value) {
         this.value = value;
     }
 
-    public T getValue() {
+    public int getValue() {
         return value;
     }
 
-    public void setValue(T value) {
+    public void setValue(int value) {
         this.value = value;
     }
 

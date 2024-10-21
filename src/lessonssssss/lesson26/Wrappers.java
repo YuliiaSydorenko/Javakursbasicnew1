@@ -1,4 +1,4 @@
-package lesson26;
+package lessonssssss.lesson26;
 
 public class Wrappers {  /*
     Классы-обертки используются в Java для представления примитивных типов данных как объектов
@@ -146,7 +146,6 @@ public class Wrappers {  /*
 
         int intPrimitive = doubleVal.intValue();
         System.out.println("intPrimitive: " + intPrimitive);
-
 
 
 

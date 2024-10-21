@@ -1,5 +1,9 @@
-package lesson26.boxes;
+package lessonssssss.lesson26.boxes;
 
+/**
+ * @author Sergey Bugaenko
+ * {@code @date} 17.10.2024
+ */
 
 public class BoxesApp {
 

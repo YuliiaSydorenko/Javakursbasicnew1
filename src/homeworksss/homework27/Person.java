@@ -81,14 +81,13 @@ public class Person {
 
         // Проходим по каждому символу пароля
         for (char c : password.toCharArray()) {
-            if (Character.isDigit(c)) {
-                hasDigit = true; // 2. Минимум 1 цифра
-            } else if (Character.isLowerCase(c)) {
-                hasLowerCase = true; // 3. Минимум 1 маленькая буква
-            } else if (Character.isUpperCase(c)) {
-                hasUpperCase = true; // 4. Минимум 1 большая буква
-            } else if (specialCharacters.indexOf(c) >= 0) {
-                hasSpecialChar = true; // 5. Минимум 1 специальный символ
+            if (Character.isDigit(c)) {hasDigit = true; // 2. Минимум 1 цифра
+            } else
+                if (Character.isLowerCase(c)) {hasLowerCase = true; // 3. Минимум 1 маленькая буква
+            } else
+                if (Character.isUpperCase(c)) {hasUpperCase = true; // 4. Минимум 1 большая буква
+            } else
+                if (specialCharacters.indexOf(c) >= 0) {hasSpecialChar = true; // 5. Минимум 1 специальный символ
             }
         }
 

@@ -1,7 +1,11 @@
-package lesson26;
+package lessonssssss.lesson26;
+
 import lists.MyArrayList;
 
-
+/**
+ * @author Sergey Bugaenko
+ * {@code @date} 17.10.2024
+ */
 
 public class ArrayTesting {
     public static void main(String[] args) {
@@ -11,23 +15,21 @@ public class ArrayTesting {
         MyArrayList<Double> doubles = new MyArrayList<>();
 
 
-        numbers.add("Python");
+        numbers.add(1, "JS", "Scala");
 
         System.out.println(numbers);
 
         System.out.println(numbers.indexOf(4));
 
-        System.out.println(numbers.remove(5));
+
         System.out.println(numbers);
 
         MyArrayList<String> strings = new MyArrayList<>();
-        strings.add("Java");
-        strings.add("Python");
+        strings.add("Java", "JS", "Scala", "Kotlin");
+        strings.add("Python", "JS", "Scala", "Kotlin");
         System.out.println(strings);
 
-        System.out.println(strings.remove("Basic"));
-        System.out.println(strings.remove("Scala"));
+
         System.out.println(strings);
     }
-
 }

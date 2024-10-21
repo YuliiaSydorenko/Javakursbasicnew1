@@ -2,6 +2,10 @@ package lists;
 
 import java.lang.reflect.Array;
 
+/**
+ * @author Sergey Bugaenko
+ * {@code @date} 01.10.2024
+ */
 
 public class MyArrayList<T> implements MyList<T> {
     private T[] array;
@@ -23,7 +27,7 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
     // Добавление в массив одного элемента
-    public void add(String python) {
+    public void add(T value, String js, String scala) {
 
 
         // Проверка. Есть ли вообще свободное место во внутреннем массиве
@@ -33,7 +37,6 @@ public class MyArrayList<T> implements MyList<T> {
             expandArray();
         }
 
-        T value;
         array[cursor] = value;
         cursor++;
     }
@@ -44,7 +47,7 @@ public class MyArrayList<T> implements MyList<T> {
         // System.out.println("Приняли несколько интов. А именно: " + numbers.length);
         // System.out.println("Есть индекс у каждого инта, как в массиве. По индексом 0: " + numbers[0]);
         for (int i = 0; i < numbers.length; i++) {
-            add("Python");
+            add(numbers[i], "JS", "Scala");
         }
     }
 
@@ -171,11 +174,6 @@ public class MyArrayList<T> implements MyList<T> {
 
     }
 
-    @Override
-    public void add(T i, T i1, T i2, T i3, T i4, T i5, T i6) {
-
-    }
-
     // Является ли коллекция пустой
     @Override
     public boolean isEmpty() {
@@ -244,6 +242,13 @@ public class MyArrayList<T> implements MyList<T> {
 //            result[i] = array[i];
 //        }
 
+
+    }
+
+    public void add(T python, T js, T scala, T kotlin) {
+    }
+
+    public void add(T hello, T world, T java) {
 
     }
 }

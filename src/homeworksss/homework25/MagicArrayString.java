@@ -1,28 +1,26 @@
 package homeworksss.homework25;
 
-public class MagicArrayGen<T> {
-    private T[] array;
-    int cursor; // присвоено значение по умолчанию = 0;
+public class MagicArrayString {
+    private String[] array; // Todo
+    private int cursor; // присвоено значение по умолчанию = 0;
 
-    @SuppressWarnings("unchecked")
-    public MagicArrayGen() {
-        array = (T[]) new Object[10];
+    @SuppressWarnings("unchecked") // Подавляю предупреждение компилятора о непроверяемом приведении типа
+    public MagicArrayString() {
+        array = new String[10]; // Todo
     }
 
-    public MagicArrayGen(int[] array) {
+    // Todo
+    public MagicArrayString(String[] array) {
         if (array == null || array.length == 0) {
-            this.array = (T[]) new Object[10];
+            this.array = new String[10];
         } else {
-            this.array = (T[]) new Object[array.length * 2];
+            this.array = new String[array.length * 2];
             add(array);
         }
     }
 
-    private void add(int[] array) {
-    }
-
     // Добавление в массив одного элемента
-    public void add(T value) {
+    public void add(String value) { // Todo
 
 
         // Проверка. Есть ли вообще свободное место во внутреннем массиве
@@ -36,7 +34,8 @@ public class MagicArrayGen<T> {
         cursor++;
     }
 
-    void add(T... numbers) {
+    // Todo
+    public void add(String... numbers) {
         // с numbers я могу обращаться точно также, как со ссылкой на массив int
         // System.out.println("Приняли несколько интов. А именно: " + numbers.length);
         // System.out.println("Есть индекс у каждого инта, как в массиве. По индексом 0: " + numbers[0]);
@@ -47,7 +46,7 @@ public class MagicArrayGen<T> {
 
 
     // Динамическое расширение массива
-    void expandArray() {
+    private void expandArray() {
         System.out.println("Расширяем массив! Курсор = " + cursor);
         /*
         1. создать новый массив бОльшего размера (в 2 раза больше)
@@ -56,7 +55,7 @@ public class MagicArrayGen<T> {
          */
 
         // 1
-        T[] newArray = (T[]) new Object[array.length * 2];
+        String[] newArray = new String[array.length * 2];
 
         // 2
         for (int i = 0; i < cursor; i++) {
@@ -83,22 +82,22 @@ public class MagicArrayGen<T> {
     }
 
     // Текущее количество элементов в массиве
-    int size() {
+    public int size() {
         return cursor;
     }
 
     // Возвращает значение по индексу
-    Object get(int index) {
+    public String get(int index) {
         if (index >= 0 && index < cursor) {
             return array[index];
         }
         // Написать код, если индекс "не корректный"
-        return Integer.MIN_VALUE; // Хорошего решения нет.
-        //Todo Поправить обработку не корректного индекса
+        return null; //
+
     }
 
     // Удаление элемента по индексу
-    public Object remove(int index) {
+    public String remove(int index) {
         /*
         1. Проверка индекса на валидность
         2. Удалить значение по индексу
@@ -108,7 +107,7 @@ public class MagicArrayGen<T> {
 
         if (index >= 0 && index < cursor) {
             // Логика удаления
-            T value = array[index]; // значение, которое я должен вернуть
+            String value = array[index]; // значение, которое я должен вернуть
 
             // Перебираем элементы начиная с индекса и перезаписываем значениями из соседней правой ячейки
             for (int i = index; i < cursor - 1; i++) { // граница перебора индексов?
@@ -121,30 +120,37 @@ public class MagicArrayGen<T> {
         } else {
 //           Индекс не валидный
             // Todo поправить возвращаемое значение при невалидном индексе
-            return Integer.MIN_VALUE;
+            return null;
         }
     }
 
     // Поиск по значению. Первое вхождение
     // {1, 100, 5, 5, 100} -> 100 метод вернет индекс первого найдено вхождения = 1
-    /*int indexOf(int value) {
+    public int indexOf(String value) {
         for (int i = 0; i < cursor; i++) {
-            if ( (int array[i] == value) {
+            if (array[i] == value) {
                 return i;
             }
         }
         return -1;
-    }*/
+    }
 
     // Метод поиска по значению. Поиск последнего вхождения
+    // Возвращает индекс последнего вхождения значения в массиве
     // {1, 100, 5, 5, 100} -> 100 метод вернет индекс последнего найдено вхождения = 4
-    int lastIndexOf(int value) {
-        // Todo реализовать
+    public int lastIndexOf(String value) {
+
+        for (int i = cursor - 1; i >= 0; i--) {
+            if (array[i] == value) {
+               return i;
+            }
+        }
+
         return -1;
     }
 
     // Удаление элемента по значению
-    boolean removeByValue(int value) {
+    public boolean removeByValue(String value) {
         /*
         1. Есть ли элемент с таким значение в массиве - indexOf
         2. Если элемента нет - вернуть false
@@ -158,10 +164,7 @@ public class MagicArrayGen<T> {
     }
 
 
-    public int indexOf(int i) {
 
-        return i;
-    }
 }
 
 /*
@@ -175,5 +178,6 @@ public class MagicArrayGen<T> {
 8. Конструктор, принимающий массив ++
 9. Удаление по значению
 10. Поиск по значению. Возвращает индекс ++
+11. Написать метод lastIndexOf(int value) возвращающий индекс последнего вхождения значения в массиве.
 
  */
