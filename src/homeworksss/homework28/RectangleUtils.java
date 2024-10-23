@@ -4,6 +4,8 @@ import java.util.Iterator;
 import java.util.List;
 
 public class RectangleUtils {
+
+
     public static void removeDuplicates(List<Rectangle> rectangles, Rectangle rectangleToRemove) {
         // Используем Iterator для безопасного удаления элементов во время итерации
         Iterator<Rectangle> iterator = rectangles.iterator();

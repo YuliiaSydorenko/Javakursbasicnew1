@@ -17,7 +17,7 @@ public class Lesson27 {
         integers.addAll(1, 5, 7, 98, 100, 500);
         System.out.println(integers);
 
-        integers.add(1000, "JS", "Scala");
+        integers.add(1000);
         System.out.println(integers);
 
         System.out.println("size: " + integers.size());
@@ -52,7 +52,7 @@ public class Lesson27 {
         System.out.println("\n ================== \n");
 
         MyArrayList<String> strings = new MyArrayList<>();
-        strings.add("Hello", "JS", "Scala", "Kotlin");
+        strings.add("Hello");
         String[] strArray = strings.toArray();
         System.out.println("link: " + Arrays.toString(strArray));
 

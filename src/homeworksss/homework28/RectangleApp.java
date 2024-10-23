@@ -19,9 +19,12 @@ public class RectangleApp {
         System.out.println("rectangle == rectangle2: " + rectangle.equals(rectangle2));
         System.out.println("rectangle2 == rectangle1: " + rectangle2.equals(rectangle1));
 
+
+
         List<Rectangle> rectangles = new ArrayList<>();
         rectangles.add(new Rectangle(5.0, 3.0));
         rectangles.add(new Rectangle(4.0, 2.0));
+        rectangles.add(new Rectangle(5.0, 3.0)); // Дубликат
         rectangles.add(new Rectangle(5.0, 3.0)); // Дубликат
         rectangles.add(new Rectangle(6.0, 4.0));
         rectangles.add(new Rectangle(5.0, 3.0)); // Дубликат
@@ -40,6 +43,8 @@ public class RectangleApp {
         System.out.println("\nСписок после удаления дубликатов:");
         for (Rectangle rect : rectangles) {
             System.out.println(rect);
+
+
         }
     }
 }

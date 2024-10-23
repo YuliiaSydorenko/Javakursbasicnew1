@@ -15,7 +15,7 @@ public class ArrayTesting {
         MyArrayList<Double> doubles = new MyArrayList<>();
 
 
-        numbers.add(1, "JS", "Scala");
+        numbers.add(1);
 
         System.out.println(numbers);
 
@@ -25,8 +25,11 @@ public class ArrayTesting {
         System.out.println(numbers);
 
         MyArrayList<String> strings = new MyArrayList<>();
-        strings.add("Java", "JS", "Scala", "Kotlin");
-        strings.add("Python", "JS", "Scala", "Kotlin");
+        strings.add("Java");
+
+
+        // , "JS", "Scala", "Kotlin"     "JS", "Scala", "Kotlin"
+        strings.add("Python");
         System.out.println(strings);
 
 

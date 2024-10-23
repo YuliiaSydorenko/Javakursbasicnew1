@@ -2,10 +2,7 @@ package lessonssssss.lesson26.methods;
 
 import lists.MyArrayList;
 
-/**
- * @author Sergey Bugaenko
- * {@code @date} 17.10.2024
- */
+
 
 public class MethodsApp {
     public static void main(String[] args) {
@@ -31,13 +28,14 @@ public class MethodsApp {
         System.out.println(Util.sum2(doubles));
 
         MyArrayList<Integer> myArrayList = new MyArrayList<>();
-        myArrayList.add(1, 2, 3, 4);
+        myArrayList.addAll(1, 2, 3, 4, 5, 6, 7);
 
         double listSum = Util.listSum(myArrayList);
         System.out.println("listSum = " + listSum);
 
-        //MyArrayList<String> strings1 = new MyArrayList<>();
-        //strings1.add("World", "Hello", "Java");
+        MyArrayList<String> strings1 = new MyArrayList<>();
+        strings1.addAll("Hello", "World", "Java");
+
         // Ошибка компиляции
         // double listSu2 = Util.listSum(strings1);
 

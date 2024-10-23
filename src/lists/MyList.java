@@ -5,12 +5,9 @@ public interface MyList <T> {
 
     /**
      * Добавить элемент
-     *
      * @param value
-     * @param js
-     * @param scala
      */
-    void add(T value, String js, String scala);
+    void add(T value);
 
 
     /**

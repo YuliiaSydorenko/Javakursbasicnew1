@@ -1,13 +1,27 @@
 package lists;
 
 import java.lang.reflect.Array;
+import java.util.Iterator;
+
 
 /**
  * @author Sergey Bugaenko
  * {@code @date} 01.10.2024
  */
+/*
+Iterable - означает, что все объекты этого класса можно перебирать (итерировать). Содержит всего один метод,
+который возвращает итератор (тот самый объект-закладку, который позволяет перебирать коллекцию)
 
-public class MyArrayList<T> implements MyList<T> {
+Iterator<T> iterator() - возвращает итератор для коллекции
+
+// Iterator - собственно итератор, который позволяет обходить коллекцию.
+boolean hasNext() - есть ли следующий элемент
+T next() -> возвращает следующий элемент
+void remove() - не обязательный. Удаляет последний возвращенный элемент.
+
+ */
+
+public class MyArrayList<T> implements MyList<T>, Iterable<T> {
     private T[] array;
     private int cursor; // присвоено значение по умолчанию = 0;
 
@@ -27,7 +41,7 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
     // Добавление в массив одного элемента
-    public void add(T value, String js, String scala) {
+    public void add(T value) {
 
 
         // Проверка. Есть ли вообще свободное место во внутреннем массиве
@@ -47,7 +61,7 @@ public class MyArrayList<T> implements MyList<T> {
         // System.out.println("Приняли несколько интов. А именно: " + numbers.length);
         // System.out.println("Есть индекс у каждого инта, как в массиве. По индексом 0: " + numbers[0]);
         for (int i = 0; i < numbers.length; i++) {
-            add(numbers[i], "JS", "Scala");
+            add(numbers[i]);
         }
     }
 
@@ -245,13 +259,37 @@ public class MyArrayList<T> implements MyList<T> {
 
     }
 
-    public void add(T python, T js, T scala, T kotlin) {
+    @Override
+    public Iterator<T> iterator() {
+        // написать имплементацию Iterator<T>
+        return new MyIterator();
     }
 
-    public void add(T hello, T world, T java) {
+    private class MyIterator implements Iterator<T> {
 
-    }
-}
+        int currentIndex = 0;
+
+        // boolean hasNext() - есть ли следующий элемент
+
+
+        @Override
+        public boolean hasNext() {
+            return currentIndex < cursor;
+        }
+
+        //  T next() -> возвращает следующий элемент
+        @Override
+        public T next() {
+            return array[currentIndex++];
+//            T value = array[currentIndex];
+//            currentIndex++;
+//            return value;
+        }
+    } // End MyIterator
+
+
+
+} // Класс MyArrayList
 
 /*
 1. Добавлять в массив элемент (не думая об индексах, размере массива) ++
