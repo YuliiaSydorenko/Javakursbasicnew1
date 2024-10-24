@@ -98,6 +98,8 @@ public class PersonHw30Test {
 
         // Пробуем установить невалидный пароль
         person.setPassword(invalidPassword);
+        // Проверяем, что невалидный пароль не был установлен
+        Assertions.assertNotEquals(invalidPassword, person.getPassword(), "Невалидный пароль не должен быть установлен");
 
         // Проверяем, что пароль не изменился после попытки установить невалидный пароль
         Assertions.assertEquals(previousPassword, person.getPassword(), "Пароль не должен измениться при установке невалидного пароля");
