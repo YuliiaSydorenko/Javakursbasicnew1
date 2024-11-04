@@ -86,6 +86,8 @@ public class PersonHw30Test {
     @Test
     void testValidPasswordSet() { //Проверяет, что корректный e-mail устанавливается
         String validPassword = "Password1!";
+       // Assertions.assertNotNull(person.getPassword());
+        //String string = null;
         person.setPassword(validPassword);
         Assertions.assertEquals(validPassword, person.getPassword(), "Валидный пароль должен быть установлен");
     }

@@ -5,6 +5,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 class TestExample {
 
@@ -16,9 +18,9 @@ class TestExample {
     /*
     @BeforeAll - метод выполняется только один раз перед выполнение первого теста
     @AfterEach - выполняется после КАЖДОГО тестовым методом
-    @AfterAll - метод выполняется только один раз после выполнение всех тестовых матодов
+    @AfterAll - метод выполняется только один раз после выполнение всех тестовых методов
     @Disabled - указывает, что тест отключен и выполняться не будет
-    @Nested - позволяет создать вложенный тестовый класс. Может быть использована для логический группировки тестовых методов
+    @Nested - позволяет создать вложенный тестовый класс. Может быть использована для логической группировки тестовых методов
      */
 
 
@@ -40,6 +42,7 @@ class TestExample {
         assertNull(null); // Проверяет, что объект равен null
         assertNotNull("String"); // Проверяет, что объект не равен null
     }
+
 
     @Disabled
     @Test
